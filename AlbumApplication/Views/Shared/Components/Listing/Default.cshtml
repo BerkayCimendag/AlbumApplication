@@ -1,0 +1,63 @@
+﻿@model List<Album>
+
+<h1>Albums</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+
+
+
+            <th>
+                Name
+            </th>
+            <th>
+                Artist
+            </th>
+            <th>
+                Price
+            </th>
+            <th>
+                Discount
+            </th>
+            <th>
+                Last Price
+            </th>
+            <th>
+                IsItOnSale
+            </th>
+            <th>
+                Release Date
+            </th>
+        </tr>
+
+    </thead>
+    <tbody>
+
+        @{
+            if (Model != null)
+            {
+                foreach (var album in Model)
+                {
+                    <tr>
+                        <td>@album.Name</td>
+                        <td>@album.Artist</td>
+                        <td>@album.Price</td>
+                        <td>@album.Discount</td>
+                        <td>@album.LastPrice</td>
+                        <td>@album.IsItOnSale</td>
+                        <td>@album.ReleaseDate</td>
+                        
+
+
+
+                        <td><a class="btn btn-warning" asp-action="Edit" asp-route-id="@album.Id">EDIT</a> </td>
+                        <td><a class="btn btn-danger" asp-action="Delete" asp-route-id="@album.Id">DELETE</a> </td>
+                    </tr>
+                }
+            }
+        }
+    </tbody>
+
+
+
+</table>

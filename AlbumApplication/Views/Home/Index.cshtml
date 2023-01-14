@@ -1,0 +1,32 @@
+﻿@model AdminViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+<h1>REGISTRATION PAGE</h1>
+
+
+<div class="card-body">
+    <form asp-action="Add" asp-controller="Home" method="post">
+        <div style="margin-left:600px;">
+            <a asp-controller="Home" asp-action="Login" class="btn btn-warning">Login</a>
+        </div>
+        <div class="form-group">
+            <label asp-for="Username">Username: </label>
+            <input asp-for="Username" type="text" class="form-control mb-2" />
+            <span asp-validation-for="Username" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Password">Password: </label>
+            <input asp-for="Password" type="text" class="form-control mb-2" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="PasswordAgain">Password Again: </label>
+            <input asp-for="PasswordAgain" type="text" class="form-control mb-2" />
+            <span asp-validation-for="PasswordAgain" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-success">SIGN IN</button>
+
+
+    </form>
+</div>

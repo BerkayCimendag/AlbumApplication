@@ -1,0 +1,41 @@
+﻿@model Album
+
+<h1>EDIT  ALBUMS</h1>
+
+<div class="card-body">
+    <form asp-action="Edit" asp-controller="Album">
+        <div class="form-group">
+            <label asp-for="Name">Album Name: </label>
+            <input asp-for="Name" type="text" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Artist">Artist: </label>
+            <input asp-for="Artist" type="text" class="form-control" />
+            <span asp-validation-for="Artist" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Price">Price: </label>
+            <input asp-for="Price" type="number" class="form-control" />
+            <span asp-validation-for="Price" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Discount">Discount Ratio: </label>
+            <input asp-for="Discount" type="number" class="form-control" />
+            <span asp-validation-for="Discount" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ReleaseDate">Release Date: </label>
+            <input asp-for="ReleaseDate" type="date" class="form-control mb-2" />
+            <span asp-validation-for="ReleaseDate" class="text-danger"></span>
+        </div>
+        <div class="form-group checkbox">
+            <label asp-for="IsItOnSale">Is It On Sale: </label>
+            <label>
+                <input asp-for="IsItOnSale" />
+            </label>
+            <span asp-validation-for="IsItOnSale" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-success">EDIT</button>
+    </form>
+</div>
